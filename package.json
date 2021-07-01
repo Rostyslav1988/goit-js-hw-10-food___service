@@ -1,5 +1,5 @@
 {
-  "name": "goit-js-hw-10-food-service",
+  "name": "goit-js-hw-10-food___service",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AntonBazhan/goit-js-hw-10-food-service"
+    "url": "git+https://github.com/Rostyslav1988/goit-js-hw-10-food___service"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AntonBazhan/goit-js-hw-10-food-service"
+    "url": "https://github.com/Rostyslav1988/goit-js-hw-10-food___service"
   },
-  "homepage": "https://github.com/AntonBazhan.github.io/goit-js-hw-10-food-service#readme",
+  "homepage": "https://github.com/Rostyslav1988/goit-js-hw-10-food___service#readme",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
