@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rostyslav1988/goit-js-hw-10-food___service"
+    "url": "git+https://rostyslav1988.github.io/goit-js-hw-10-food___service/build/"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Rostyslav1988/goit-js-hw-10-food___service"
+    "url": "https://rostyslav1988.github.io/goit-js-hw-10-food___service/build/"
   },
-  "homepage": "https://github.com/Rostyslav1988/goit-js-hw-10-food___service#readme",
+  "homepage": "https://rostyslav1988.github.io/goit-js-hw-10-food___service/build/#readme",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
