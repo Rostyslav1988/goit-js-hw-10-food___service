@@ -1,42 +1,48 @@
-const refs = {
-  body: document.querySelector('body'),
-  switch: document.querySelector('.js-switch-input'),
-};
+const themeSwitchRef = document.querySelector('.theme-switch__toggle');
 
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
 
-refs.switch.addEventListener('change', setClassList);
-refs.switch.addEventListener('change', setLocalStorage);
+const changeTheme = currentTheme => document.body.classList.add(currentTheme);
+const currentTemeLocalStorage = () => localStorage.getItem('currentTheme');
+const changeLocalStorage = currentTheme =>
+  localStorage.setItem('currentTheme', currentTheme);
+const addChecked = () => (themeSwitchRef.checked = true);
+const removeCheked = () => (themeSwitchRef.checked = false);
 
-function setClassList(e) {
-  const check = refs.switch.checked;
+const enableDark = () => {
+  currentTheme = Theme.DARK;
+  document.body.classList.remove(Theme.LIGHT);
+  changeTheme(currentTheme);
+  changeLocalStorage(currentTheme);
+  addChecked();
+};
 
-  if (check) {
-    refs.body.classList.add(Theme.DARK);
-    refs.body.classList.remove(Theme.LIGHT);
-  } else {
-    refs.body.classList.add(Theme.LIGHT);
-    refs.body.classList.remove(Theme.DARK);
-  }
+const enableWhite = () => {
+  currentTheme = Theme.LIGHT;
+  document.body.classList.remove(Theme.DARK);
+  changeTheme(currentTheme);
+  changeLocalStorage(currentTheme);
+  removeCheked();
+};
+
+// Первоначальная проверка на запись в локалсторедж.
+// Если там ничего нет, то добавляем светлую тему
+if (!localStorage.hasOwnProperty('currentTheme')) {
+  enableWhite();
 }
 
-function setLocalStorage(e) {
-  const check = refs.switch.checked;
+// Меняем класс на боди в зависимости от текущей темы в локалсторедж.
+changeTheme(currentTemeLocalStorage());
 
-  if (check) {
-    localStorage.setItem('theme', Theme.DARK);
-  } else {
-    localStorage.removeItem('theme');
-    localStorage.setItem('theme', Theme.LIGHT);
-  }
+// Если тема темная - добавляем атрибут cheked
+if (currentTemeLocalStorage() === Theme.DARK) {
+  addChecked();
 }
 
-const themeInLocal = localStorage.getItem('theme');
-
-if (themeInLocal === Theme.DARK) {
-  refs.body.classList.add(Theme.DARK);
-  refs.switch.checked = true;
-}
+// Нажатие на чекбокс
+themeSwitchRef.addEventListener('change', event => {
+  currentTemeLocalStorage() === Theme.LIGHT ? enableDark() : enableWhite();
+});
